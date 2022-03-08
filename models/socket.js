@@ -12,7 +12,7 @@ class Sockets{
     socketsEvents(){
         this.io.on('connection', (socket) => { 
 
-            console.log('client conect');
+            console.log('client conect', socket.handshake.auth);
             console.log(++this.total)
 
             socket.emit('list-bands', this.bandList.getBands);
